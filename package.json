@@ -1,24 +1,26 @@
 {
-  "name": "dns-proxy",
+  "name": "nem-dns-proxy",
   "version": "1.0.1",
   "description": "Simple DNS Proxy written in Node.JS. Override hosts, domains, or tlds.",
   "bin": {
-    "dns-proxy": "dns-proxy.js"
+    "nem-dns-proxy": "nem-dns-proxy.js"
   },
-  "main": "dns-proxy.js",
+  "main": "nem-dns-proxy.js",
   "preferGlobal": true,
-  "author": "Erik Kristensen <erik@erikkristensen.com>",
+  "author": "soralis_nem <soralis.nem@gmail.com>",
   "license": "MIT",
-  "repository": "ekristen/dns-proxy",
+  "repository": "soralis-nem/nem-dns-proxy",
   "scripts": {
-    "start": "node ./dns-proxy.js",
+    "start": "node ./nem-dns-proxy.js",
     "test": "npm run test:standard",
     "test:standard": "standard *.js",
-    "pkg": "pkg --out-dir release --targets node8-macos-x64,node8-alpine-x64,node8-linux-x64,node8-win dns-proxy.js"
+    "pkg": "pkg --out-dir release --targets node8-macos-x64,node8-alpine-x64,node8-linux-x64,node8-win nem-dns-proxy.js"
   },
   "dependencies": {
     "debug": "^3.1.0",
+    "js-sha256": "^0.9.0",
     "native-dns-packet": "~0.1.1",
+    "nem-sdk": "^1.6.7",
     "rc": "^1.1.6",
     "wildcard2": "0.0.2"
   },

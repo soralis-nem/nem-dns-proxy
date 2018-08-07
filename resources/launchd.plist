@@ -3,27 +3,27 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>com.github.ekristen.dns-proxy</string>
+    <string>org.soralis.nem-dns-proxy</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/usr/local/bin/dns-proxy</string>
+      <string>/usr/local/bin/nem-dns-proxy</string>
       <string>--config</string>
-      <string>/usr/local/etc/dnsproxyrc</string>
+      <string>/usr/local/etc/nem-dnsproxyrc</string>
     </array>
     <key>EnvironmentVariables</key>
     <dict>
       <key>PATH</key>
       <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH</string>
       <key>NODE_PATH</key>
-      <string>/usr/local/lib/node_modules/dns-proxy</string>
+      <string>/usr/local/lib/node_modules/nem-dns-proxy</string>
     </dict>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/usr/local/var/log/dns-proxy/dns-proxy.log</string>
+    <string>/usr/local/var/log/nem-dns-proxy/nem-dns-proxy.log</string>
     <key>StandardErrorPath</key>
-    <string>/usr/local/var/log/dns-proxy/dns-proxy.err</string>
+    <string>/usr/local/var/log/nem-dns-proxy/nem-dns-proxy.err</string>
   </dict>
 </plist>
