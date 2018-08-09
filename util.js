@@ -20,11 +20,24 @@ module.exports.listAnswer = function (response) {
   return results.join(', ') || 'nxdomain'
 }
 
-module.exports.createAnswer = function (query, answer) {
+module.exports.createAAnswer = function (query, answer) {
   query.header.qr = 1
   query.header.rd = 1
   query.header.ra = 1
-  query.answer.push({ name: query.question[0].name, type: 1, class: 1, ttl: 30, address: answer })
+  query.answer.push({ name: query.question[0].name, type: 1, class: 1, ttl: 3600, address: answer })
+
+  const buf = Buffer.alloc(4096)
+  const wrt = packet.write(buf, query)
+  const res = buf.slice(0, wrt)
+
+  return res
+}
+
+module.exports.createCNAMEAnswer = function (query, answer) {
+  query.header.qr = 1
+  query.header.rd = 1
+  query.header.ra = 1
+  query.answer.push({ name: query.question[0].name, type: 5, class: 1, ttl: 3600, address: answer })
 
   const buf = Buffer.alloc(4096)
   const wrt = packet.write(buf, query)
